@@ -1,0 +1,152 @@
+.pagePosition{
+    width: 65%;
+    margin-left: 17.5%;
+    margin-right: 17.5;
+    margin-top: 5px;
+    background-color: white;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.detailsPosition{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2.5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.imagePosition{
+    width: 30%;
+    height: 375px;
+}
+
+.formPosition{
+    width: 60%;
+    height: 375px;
+    margin-left: 1vw;
+}
+
+.productForm{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 4vh;
+}
+
+.dataForm{
+    margin-right: 2%;
+    width: 48%;
+}
+
+.productName{
+    font-size: xx-large;
+    margin-bottom: 3vh;
+    text-align: center;
+    line-height: 4.5vh;
+}
+
+.nameInput{
+    width: 100%;
+    font-size: large;
+}
+
+.descriptionField{
+    width: 100%;
+    font-size: large;
+    background-color: white;
+    text-align: justify;
+}
+
+.labels{
+    font-size: medium;
+}
+
+.priceForm{
+    text-align: center;
+    width: 48%;
+    margin-left: 2%;
+    margin-top: 4vh;
+}
+
+.productPrice{
+    font-size: x-large;
+    color: tomato;
+}
+
+.buyButton{
+    background-color: rgb(15, 196, 30);
+    color: white;
+    font-size: large;
+    height: 7vh;
+}
+
+.quantityDisplay{
+    font-size: small;
+    margin-top: 0.75vh;
+}
+
+.priceAndQuantityInput{
+    font-size: large;
+    text-align: center;
+}
+
+.adminControls{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: solid;
+}
+
+.controlsTitle{
+    width: 100%;
+    text-align: center;
+    margin-top: 1vh;
+    font-size: large;
+}
+
+.commandsPosition{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-left: 10%;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.finishEdittingButton {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.deleteButton{
+    background-color: rgb(170, 27, 22);
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.addImage{
+    margin-top: 5vh;
+    width: 20vw;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.addImagePosition{
+    margin-top: 8vh;
+}
+
+.finishCreatePosition{
+    width: 100%;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.finishCreateButton{
+    color: white;
+    background-color: rgb(3, 146, 3);
+}

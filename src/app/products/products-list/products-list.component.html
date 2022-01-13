@@ -1,0 +1,10 @@
+<br>
+<div class = "pagePostion">
+    <br>
+    <div class="pageTitle">
+        <span>Descubra nossa linha de produtos!</span>
+    </div>
+    <div class="productsPosition">
+        <app-product-card [product] = "product" (click) = "seeProductDetails(product.id)" *ngFor="let product of products"></app-product-card>
+    </div>
+</div>

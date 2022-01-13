@@ -1,0 +1,44 @@
+.card{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 30px;
+    width: 25%;
+    height: 325px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+.card:hover{
+    cursor: pointer;
+    transition: all 0.4s;
+    transform: scale(1.05);
+}
+
+.card:active{
+    cursor: pointer;
+    transform: scale(1.0);
+    transition: all 0.2s;
+}
+
+.imagePosition{
+    width: 85%;
+    height: 215px;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 15px;
+}
+
+.namePosition{
+    margin-left: 5%;
+    margin-top: 5px;
+    font-size: large;
+}
+
+.pricePosition{
+    margin-left: 5%;
+    margin-top: 10px;
+    font-size: large;
+    color: green;
+}

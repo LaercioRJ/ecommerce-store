@@ -1,0 +1,80 @@
+<br>
+<div class="pagePosition" [class.mat-elevation-z4]="true">
+    <br>
+    <div class="detailsPosition">
+        <img *ngIf="!isCreating" class="imagePosition" src="{{product.picture}}">
+        <div *ngIf="isCreating" class="addImage">
+            <button class="addImagePosition" color = "primary" mat-flat-button>Adicionar imagem</button>
+        </div>
+        <div class="formPosition">
+            <form [formGroup]="productForm" class="productForm">
+                <div class="dataForm">
+                    <div class="productName" *ngIf="!editting">
+                        <span>{{productForm.get('name')?.value}}</span>
+                    </div>
+                    <div *ngIf="editting">
+                        <mat-form-field class="nameInput" appearance="outline">
+                            <mat-label class="labels">Nome do Produto</mat-label>
+                            <input formControlName="name" matInput>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field class="descriptionField" appearance="outline">
+                        <mat-label class="labels">Descrição do Produto</mat-label>
+                        <textarea formControlName="description" cdkTextareaAutosize matInput [readonly] = "!editting"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="priceForm">
+                    <div *ngIf="!editting">
+                        <div class="productPrice">
+                            <span>R$ {{productForm.get('price')?.value}}</span>
+                        </div>
+                        <br>
+                        <mat-form-field class="quantityInput" appearance="outline">
+                            <mat-label class="labels">Quantidade</mat-label>
+                            <mat-select formControlName="quantityBought">
+                                <mat-option *ngFor="let quantity of quantities" [value] = "quantity">
+                                    {{quantity}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <br>
+                        <button (click) = "insertIntoCart()" [disabled] = "productForm.get('stock')?.value == 0" mat-raised-button color = "secondary" class="buyButton">Adicionar ao carrinho</button>
+                        <br>
+                        <div class="quantityDisplay">
+                            <span>{{productForm.get('stock')?.value}} disponíveis</span>
+                        </div>
+                    </div>
+
+                    <div *ngIf="editting">
+                        <mat-form-field class="priceAndQuantityInput" appearance="outline">
+                            <mat-label class="labels">Preço</mat-label>
+                            <input formControlName="price" matInput>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field class="priceAndQuantityInput" appearance="outline">
+                            <mat-label class="labels">Estoque</mat-label>
+                            <input (change) = "initializeQuantities()" formControlName="stock" matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="isCreating" class="finishCreatePosition">
+        <button (click) = "createProduct()" [disabled] = "productForm.invalid" class="finishCreateButton" mat-raised-button>Finalizar Cadastro</button>
+    </div>
+    <div *ngIf="isAdmin && !isCreating" class="adminControls">
+        <div class="controlsTitle">
+            <span>Comandos  do administrador</span>
+        </div>
+        <div class="commandsPosition">
+            <mat-slide-toggle style="margin-top: 1vh; margin-left: 1vw;" color = "primary" [(ngModel)] = "editting" >Editar</mat-slide-toggle>
+            <button class="finishEdittingButton" (click) = "updateProduct()" [disabled] = "productForm.invalid" color = "primary" mat-flat-button>Salvar Alterações</button>
+            <button class="deleteButton" (click) = "deleteProduct()" mat-flat-button>Excluir</button>
+        </div>
+    </div>
+    <br>
+</div>
+<br>
+
+<app-product-review *ngIf="!isCreating" [productId] = "product.id"></app-product-review>
